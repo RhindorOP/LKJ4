@@ -1,5 +1,5 @@
 <template>
-	<v-container fluid pa-0 style="position:relative">
+	<v-container class="black" fluid pa-0 style="position:relative">
 		<v-sheet class="black" style="position:absolute" width="100vw">
 			<v-img
 				v-for="i in lenwebp"
@@ -11,7 +11,7 @@
 			/>
 		</v-sheet>
 		<v-sheet class="transparent" style="position:absolute" width="100vw">
-			<!-- <v-img
+			<v-img
 				v-show="num"
 				v-for="i in lenpng"
 				:key="i"
@@ -19,19 +19,10 @@
 				eager
 				max-width="750px"
 				class="mx-auto"
-			/>-->
-			<v-sheet
-				v-show="num"
-				v-for="i in 122"
-				:key="i"
-				elevation="10"
-				max-width="750px"
-				class="text-center text-h2 text-md-h1 font-weight-bold py-10"
-				style="margin: 25px auto 750px"
-			>TO BE TRANSLATED</v-sheet>
+			/>
 		</v-sheet>
 	</v-container>
-</template>
+</template>y
 
 <script>
 export default {
@@ -42,8 +33,8 @@ export default {
 		lengths() {
 			const raws = require.context("../assets/RAW/", false, /^.*\.webp$/);
 			this.lenwebp = raws.keys().length;
-			// const tl = require.context("../assets/TL/", false, /^.*\.png$/);
-			// this.lenpng = tl.keys().length;
+			const tl = require.context("../assets/TL/", false, /^.*\.png$/);
+			this.lenpng = tl.keys().length;
 		},
 	},
 	created() {
